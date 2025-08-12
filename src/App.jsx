@@ -10,8 +10,6 @@ const App=()=>{
 
   return(
 
-    
-
 <BrowserRouter>
   <Routes>
     <Route path="/" element={<Layout/>}>  
@@ -24,8 +22,6 @@ const App=()=>{
   </Routes>
 </BrowserRouter>
     
-    
-   
   );
 };
 export default App;
