@@ -1,20 +1,39 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 
-const App =()=>{
-const [count,setCount]=useState(0);
+const App=()=>{
+
+  const [name,setName]=useState("")
+  const [age,setAge]=useState()
+  const [city,setCity]=useState("")
+  const [fees,setFees]=useState()
 
 
-useEffect(()=>{
-  setTimeout(() => {
-
-    setCount(count+1);
+  const handleSubmit=()=>{
     
-  }, 1000);
-})
+
+    alert(`Name= ${name}  Age= ${age} City=${city} Fees=${fees}
+      `
+    )
+
+
+
+  };
+
 
   return(
     <>
-    <h1>{count}</h1>
+    <h1>Application form</h1>
+
+
+    Enter name : <input type="text" value={name}  onChange={(e)=>{setName(e.target.value)}}/>
+    <br />
+    Enter age : <input type="text" value={age}  onChange={(e)=>{setAge(e.target.value)}}/>
+    <br />
+    Enter city : <input type="text" value={city}  onChange={(e)=>{setCity(e.target.value)}}/>
+    <br />
+    Enter fees : <input type="text" value={fees} onChange={(e)=>{setFees(e.target.value)}}/>
+    <br />
+    <button onClick={handleSubmit}>Submit</button>
     </>
   )
 }
