@@ -1,28 +1,21 @@
-import { BrowserRouter,Route,Routes } from "react-router-dom";
-import Layout from "./Layout";
-import Home from "./Home";
-import Data from "./data";
-import About from "./About";
-
-
+import Cybrom from "./Cybrom";
+import { Myfess,College } from "./Cybrom";
 
 const App=()=>{
-
   return(
+    <>
+    <h1>This is my website</h1>
 
-<BrowserRouter>
-  <Routes>
-    <Route path="/" element={<Layout/>}>  
-    <Route index element={<Home/>}></Route>
+    <Cybrom></Cybrom>
+    <College></College>
+    <hr />
+    <Myfess></Myfess>
 
-    <Route path="home" element={<Home/>}></Route>
-    <Route path="data" element={<Data/>}></Route>
-    <Route path="about" element={<About/>}></Route>
-    </Route>
-  </Routes>
-</BrowserRouter>
-    
-  );
-};
+
+
+    </>
+  )
+}
+
+  
 export default App;
-
