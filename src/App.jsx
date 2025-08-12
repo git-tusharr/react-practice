@@ -1,24 +1,22 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
-const App=()=>{
+const App =()=>{
+const [count,setCount]=useState(0);
 
-  const [count,setCount]=useState(0);
 
-  const increase=()=>{ setCount(count+1)};
-  const decrease=()=>{ setCount(count-1)};
-   return(
+useEffect(()=>{
+  setTimeout(() => {
+
+    setCount(count+1);
+    
+  }, 1000);
+})
+
+  return(
     <>
-    <h1>Welcome to counter app</h1>
-
-    <p>count = {count}</p>
-    <button onClick={increase}>+</button>
-    <button onClick={decrease}>-</button>
-    
-  
-    
+    <h1>{count}</h1>
     </>
   )
 }
- 
 
 export default App;
