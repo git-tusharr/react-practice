@@ -1,21 +1,24 @@
-import Cybrom from "./Cybrom";
-import { Myfess,College } from "./Cybrom";
+import { useState } from "react";
 
 const App=()=>{
-  return(
+
+  const [count,setCount]=useState(0);
+
+  const increase=()=>{ setCount(count+1)};
+  const decrease=()=>{ setCount(count-1)};
+   return(
     <>
-    <h1>This is my website</h1>
+    <h1>Welcome to counter app</h1>
 
-    <Cybrom></Cybrom>
-    <College></College>
-    <hr />
-    <Myfess></Myfess>
-
-
-
+    <p>count = {count}</p>
+    <button onClick={increase}>+</button>
+    <button onClick={decrease}>-</button>
+    
+  
+    
     </>
   )
 }
+ 
 
-  
 export default App;
