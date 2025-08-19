@@ -1,41 +1,23 @@
-import { useState } from "react";
+import { createContext,useState } from "react";
+
+const myContext=createContext();
+
+import Bhopal from "./Bhopal";
+
 
 const App=()=>{
+  const [city,setCity]=useState("satna");
+    return(
+        <>
 
-  const [name,setName]=useState("")
-  const [age,setAge]=useState()
-  const [city,setCity]=useState("")
-  const [fees,setFees]=useState()
-
-
-  const handleSubmit=()=>{
-    
-
-    alert(`Name= ${name}  Age= ${age} City=${city} Fees=${fees}
-      `
+        <button onClick={()=>{setCity("ujjain")}}>click here</button>
+        <h1>Welcome to App : {city}</h1>
+        <myContext.Provider value={{city,setCity}}>
+          <Bhopal></Bhopal>
+        </myContext.Provider>
+        
+        </>
     )
-
-
-
-  };
-
-
-  return(
-    <>
-    <h1>Application form</h1>
-
-
-    Enter name : <input type="text" value={name}  onChange={(e)=>{setName(e.target.value)}}/>
-    <br />
-    Enter age : <input type="text" value={age}  onChange={(e)=>{setAge(e.target.value)}}/>
-    <br />
-    Enter city : <input type="text" value={city}  onChange={(e)=>{setCity(e.target.value)}}/>
-    <br />
-    Enter fees : <input type="text" value={fees} onChange={(e)=>{setFees(e.target.value)}}/>
-    <br />
-    <button onClick={handleSubmit}>Submit</button>
-    </>
-  )
 }
-
 export default App;
+export {myContext};
