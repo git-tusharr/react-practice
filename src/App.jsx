@@ -1,23 +1,13 @@
-import { createContext,useState } from "react";
-
-const myContext=createContext();
-
-import Bhopal from "./Bhopal";
-
+import Cybrom from "./Cybrom";
 
 const App=()=>{
-  const [city,setCity]=useState("satna");
+  
     return(
         <>
+        <h1>Welcome to App</h1>
+        <Cybrom/>
 
-        <button onClick={()=>{setCity("ujjain")}}>click here</button>
-        <h1>Welcome to App : {city}</h1>
-        <myContext.Provider value={{city,setCity}}>
-          <Bhopal></Bhopal>
-        </myContext.Provider>
-        
         </>
     )
 }
 export default App;
-export {myContext};
