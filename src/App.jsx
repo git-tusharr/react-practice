@@ -1,38 +1,29 @@
-import { useReducer } from "react";
+import { useState, useMemo } from "react";
 
 const App = () => {
-  const colorMethod = (state, action) => {
-    switch (action) {
-      case "red":
-        return "red";
-      case "green":
-        return "green";
-      case "blue":
-        return "blue";
-      case "yellow":
-        return "yellow";
-      default:
-        return state;
-    }
-  };
+  const [num, setNum] = useState("");
+  const [name, setName] = useState("");
 
-  const [color, dispatch] = useReducer(colorMethod, "violet");
+  const myVal = useMemo(() => {
+    for (let i = 0; i <= 1000000000; i++) {} // simulating heavy work
+    return num * 2;
+  }, [num]);
 
   return (
     <>
-      <button onClick={() => dispatch("red")}>Red</button>
-      <button onClick={() => dispatch("blue")}>Blue</button>
-      <button onClick={() => dispatch("green")}>Green</button>
-      <button onClick={() => dispatch("yellow")}>Yellow</button>
+      <h1>Welcome</h1>
 
-      <div
-        style={{
-          backgroundColor: color,
-          width: "300px",
-          height: "200px",
-          marginTop: "10px",
-        }}
-      ></div>
+        Select number :{" "}
+        <input
+          type="number" value={num} onChange={(e) => setNum(Number(e.target.value))}
+        />
+      <br />
+        Enter name :{" "}
+        <input
+          type="text" value={name} onChange={(e) => setName(e.target.value)}
+        />
+
+      <h2>My thousand : {myVal}</h2>
     </>
   );
 };
