@@ -1,31 +1,19 @@
-import { useState, useMemo } from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { increment,decrement } from "./counterSlice";
 
-const App = () => {
-  const [num, setNum] = useState("");
-  const [name, setName] = useState("");
+const App=()=>{
 
-  const myVal = useMemo(() => {
-    for (let i = 0; i <= 1000000000; i++) {} // simulating heavy work
-    return num * 2;
-  }, [num]);
-
-  return (
+  const mycount=useSelector(state=>state.mycounter.count);
+  const dispatch=useDispatch();
+  return(
     <>
-      <h1>Welcome</h1>
+    <h1>Hello</h1>
+    <button onClick={()=>{dispatch(increment())}}>Increment</button>
+    <h1>count : {mycount}</h1>
+    <button onClick={()=>{dispatch(decrement())}}>Decrement</button>
 
-        Select number :{" "}
-        <input
-          type="number" value={num} onChange={(e) => setNum(Number(e.target.value))}
-        />
-      <br />
-        Enter name :{" "}
-        <input
-          type="text" value={name} onChange={(e) => setName(e.target.value)}
-        />
-
-      <h2>My thousand : {myVal}</h2>
+    
     </>
-  );
-};
-
+  )
+}
 export default App;
