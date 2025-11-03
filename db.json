@@ -1,0 +1,19 @@
+{
+  "students": [
+    {
+      "id": "f971",
+      "rollno": "1",
+      "name": "tushar",
+      "city": "jabalpur",
+      "fees": "10000"
+    },
+    {
+      "id": "f6c2",
+      "name": "tushar",
+      "rollno": "1",
+      "class": "csf",
+      "age": "19",
+      "fees": "50000"
+    }
+  ]
+}
