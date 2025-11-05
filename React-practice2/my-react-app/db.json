@@ -1,0 +1,18 @@
+{
+  "students": [
+    {
+      "id": "6a8e",
+      "rollno": "1",
+      "name": "Tushar Chourasiya ",
+      "city": "indore",
+      "fees": "10000"
+    },
+    {
+      "id": "8b49",
+      "rollno": "1",
+      "name": "Tushar Chourasiya ",
+      "city": "Bhopal",
+      "fees": "45000"
+    }
+  ]
+}

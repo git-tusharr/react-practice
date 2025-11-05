@@ -1,5 +1,5 @@
 
-const update=()=>{
+const Update=()=>{
   return(
     <>
     <h1>Weclome to my update</h1>
@@ -8,4 +8,4 @@ const update=()=>{
     </>
   )
 }
-export default update;
+export default Update;
