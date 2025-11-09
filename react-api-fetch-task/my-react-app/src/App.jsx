@@ -5,9 +5,6 @@ import About from "./pages/About";
 
 import Layout from "./Layout";
 
-
-
-
 const App=()=>{
   return(
     <>
